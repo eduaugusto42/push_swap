@@ -6,7 +6,7 @@
 #    By: eduaaugu <eduaaugu@student.42sp.org.b      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/18 17:24:11 by eduaaugu          #+#    #+#              #
-#    Updated: 2026/07/08 17:02:12 by eduaaugu         ###   ########.fr        #
+#    Updated: 2026/07/10 16:09:43 by eduaaugu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I$(LIBFT_DIR) -I$(PRINTF_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -Iinclude -I$(LIBFT_DIR) -I$(PRINTF_DIR) -c $< -o $@
 
 clean:
 	$(MAKE) clean -C $(LIBFT_DIR)
