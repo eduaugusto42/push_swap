@@ -6,11 +6,11 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:51:26 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/13 18:52:16 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/13 19:36:53 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	stack_init(t_stack *stack)
 {
@@ -44,4 +44,26 @@ void	stack_clear(t_stack *stack)
 		node = stack_pop_top(stack);
 		free(node);
 	}
+}
+
+int	stack_fill_from_array(t_stack *stack, int *numbers, int size)
+{
+	int		i;
+	t_node	*node;
+
+	if (!stack || size < 0 || (!numbers && size > 0))
+		return (0);
+	i = 0;
+	while (i < size)
+	{
+		node = node_new(numbers[i]);
+		if (!node)
+		{
+			stack_clear(stack);
+			return (0);
+		}
+		stack_push_bottom(stack, node);
+		i++;
+	}
+	return (1);
 }
