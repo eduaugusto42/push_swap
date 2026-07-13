@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: eduaaugu <eduaaugu@student.42sp.org.b      +#+  +:+       +#+         #
+#    By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/18 17:24:11 by eduaaugu          #+#    #+#              #
-#    Updated: 2026/07/08 17:02:12 by eduaaugu         ###   ########.fr        #
+#    Updated: 2026/07/12 22:03:23 by juliopestan      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ PRINTF_DIR = ft_printf
 LIBFT = $(LIBFT_DIR)/libft.a
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 
-SRC = \
+SRC = main.c \
+	  parse_command_line.c \
+	  validation.c
 
 OBJS = $(SRC:.c=.o)
 

@@ -3,52 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 14:32:07 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/10 19:17:15 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/12 21:42:10 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static	int	is_valid_number(char *token)
-{
-	int	i;
-	
-	i = 0;
-	if (!token || token[i] == '\0')
-		return (0);
-	if (token[i] == '-' || token[i] == '+')
-		i++;
-	if (token[i] == '\0')
-		return (0);
-	while (token[i])
-	{
-		if (!ft_isdigit(token[i]))
-			return (0);
-		i++;
-	}
-	return (1);
-}
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
-	int	i;
-	int	j;
-	char	**tokens;
-	
+	t_input	*input;
+	int		i;
 
-	i = 1;
-	while (i < argc)
+	input = parse_command_line(argc, argv);
+	if (!input)
 	{
-		j = 0;
-		tokens = ft_split(argv[i], ' ');
-		if (!tokens)
-			return (error);
-		while (tokens[j])
-			j++;
+		printf("Erro no parser\n");
+		return (1);
+	}
+
+	printf("Quantidade de numeros: %d\n", input->size);
+
+	i = 0;
+	while (i < input->size)
+	{
+		printf("numbers[%d] = %d\n", i, input->numbers[i]);
 		i++;
 	}
-	
+
+	free_input(input);
+	return (0);
 }
