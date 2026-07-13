@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:51:26 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/10 16:50:28 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/13 18:52:16 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,17 @@ t_node	*node_new(int value)
 	node->prev = NULL;
 	node->next = NULL;
 	return (node);
+}
+
+void	stack_clear(t_stack *stack)
+{
+	t_node 	*node;
+
+	if (!stack)
+		return ;
+	while (stack->top != NULL)
+	{
+		node = stack_pop_top(stack);
+		free(node);
+	}
 }

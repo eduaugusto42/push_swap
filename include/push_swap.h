@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:31:27 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/10 15:59:41 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/10 17:31:36 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_stack
 
 // Stack lifecycle;
 void	stack_init(t_stack *stack);
-void	stack_clear(t_stack *stack);
+void	stack_clear(t_stack *stack); // TODO 6
 
 // Node lifecycle;
 t_node 	*node_new(int value);
@@ -42,5 +42,7 @@ t_node 	*node_new(int value);
 // Stack primitive operations;
 void	stack_push_top(t_stack *stack, t_node *node);
 void	stack_push_bottom(t_stack *stack, t_node *node);
-t_node	*stack_pop_top(t_stack *stack);
-t_node	*stack_pop_bottom(t_stack *stack);
+t_node	*stack_pop_top(t_stack *stack); // TODO 4
+t_node	*stack_pop_bottom(t_stack *stack); // TODO 5
+
+#endif
