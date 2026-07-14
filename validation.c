@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 10:39:58 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/12 21:45:27 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/14 19:06:21 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	error(void)
-{
-	ft_putendl_fd("Error", 2);
-	return (0);
-}
+#include "input.h"
 
 int	is_valid_number(char *token)
 {
@@ -38,30 +32,6 @@ int	is_valid_number(char *token)
 	return (1);
 }
 
-long	ft_atol(char *nbr)
-{
-	int		i;
-	int		sign;
-	long	result;
-
-	i = 0;
-	sign = 1;
-	result = 0;
-	if (nbr[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	else if (nbr[i] == '+')
-		i++;
-	while (nbr[i] >= '0' && nbr[i] <= '9')
-	{
-		result = result * 10 + (nbr[i] - '0');
-		i++;
-	}
-	return (result *= sign);
-}
-
 int	is_int_range(char *token)
 {
 	long	nbr;
@@ -72,17 +42,32 @@ int	is_int_range(char *token)
 	return (1);
 }
 
-void	free_matrix(char **matrix)
+int	has_duplicates(int *numbers, int size)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	if (!matrix)
-		return ;
-	while (matrix[i])
+	while (i < size)
 	{
-		free(matrix[i]);
+		j = i + 1;
+		while (j < size)
+		{
+			if (numbers[i] == numbers[j])
+				return (1);
+			j++;
+		}
 		i++;
 	}
-	free(matrix);
+	return (0);
+}
+
+int	parse_token(char *token, int *value)
+{
+	if (!is_valid_number(token))
+		return (0);
+	if (!is_int_range(token))
+		return (0);
+	*value = (int)ft_atol(token);
+	return (1);
 }

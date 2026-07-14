@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parse_command_line.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 10:50:50 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/12 22:24:05 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/14 19:08:39 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "input.h"
 
 static int	count_numbers(int argc, char **argv)
 {
@@ -36,45 +36,6 @@ static int	count_numbers(int argc, char **argv)
 		i++;
 	}
 	return (total);
-}
-
-static int	has_duplicates(int *numbers, int size)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < size)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (numbers[i] == numbers[j])
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
-void	free_input(t_input *input)
-{
-	if (!input)
-		return ;
-	if (input->numbers)
-		free(input->numbers);
-	free(input);
-}
-
-static int	parse_token(char *token, int *value)
-{
-	if (!is_valid_number(token))
-		return (0);
-	if (!is_int_range(token))
-		return (0);
-	*value = (int)ft_atol(token);
-	return (1);
 }
 
 static int	fill_tokens(t_input *input, char **tokens, int *index)

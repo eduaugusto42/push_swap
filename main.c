@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 14:32:07 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/12 21:42:10 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/14 17:07:32 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	main(int argc, char **argv)
 		printf("Erro no parser\n");
 		return (1);
 	}
+  else if(argc == 1)
+		return (0);
 
 	printf("Quantidade de numeros: %d\n", input->size);
 
