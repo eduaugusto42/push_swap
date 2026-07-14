@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:51:26 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/13 19:36:53 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/14 18:59:25 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_node	*node_new(int value)
 
 void	stack_clear(t_stack *stack)
 {
-	t_node 	*node;
+	t_node	*node;
 
 	if (!stack)
 		return ;

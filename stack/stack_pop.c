@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 16:59:41 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/13 19:37:15 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/14 18:59:45 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ t_node	*stack_pop_top(t_stack *stack)
 
 	if (!stack || !stack->top)
 		return (NULL);
-
 	pop_top = stack->top;
 	stack->top = pop_top->next;
 	if (!stack->top)
@@ -37,7 +36,6 @@ t_node	*stack_pop_bottom(t_stack *stack)
 
 	if (!stack || !stack->bottom)
 		return (NULL);
-
 	pop_bottom = stack->bottom;
 	stack->bottom = pop_bottom->next;
 	if (!stack->bottom)
