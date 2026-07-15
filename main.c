@@ -6,11 +6,11 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 14:32:07 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/14 17:07:32 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/15 15:27:15 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "input.h"
 #include <stdio.h>
 
 int	main(int argc, char **argv)

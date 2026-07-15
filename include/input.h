@@ -6,14 +6,14 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 14:33:50 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/14 19:18:27 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/15 15:42:33 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INPUT_H
 # define INPUT_H
 
-# include "ft_printf/ft_printf.h"
+# include "ft_printf.h"
 
 typedef struct s_input
 {
