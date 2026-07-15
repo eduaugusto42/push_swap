@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 10:39:58 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/14 19:06:21 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/15 20:37:55 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,6 @@ int	is_valid_number(char *token)
 	return (1);
 }
 
-int	is_int_range(char *token)
-{
-	long	nbr;
-
-	nbr = ft_atol(token);
-	if (nbr < INT_MIN || nbr > INT_MAX)
-		return (0);
-	return (1);
-}
-
 int	has_duplicates(int *numbers, int size)
 {
 	int	i;
@@ -64,10 +54,13 @@ int	has_duplicates(int *numbers, int size)
 
 int	parse_token(char *token, int *value)
 {
+	long	number;
+	
 	if (!is_valid_number(token))
 		return (0);
-	if (!is_int_range(token))
+	number = ft_atol(token);
+	if (number < INT_MIN || number > INT_MAX)
 		return (0);
-	*value = (int)ft_atol(token);
+	*value = (int)number;
 	return (1);
 }

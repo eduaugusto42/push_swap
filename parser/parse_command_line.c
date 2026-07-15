@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 10:50:50 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/14 19:08:39 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/15 19:34:36 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ static int	count_numbers(int argc, char **argv)
 		free_matrix(tokens);
 		i++;
 	}
+	if (total == 0)
+		return (-1);
 	return (total);
 }
 
