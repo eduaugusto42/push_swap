@@ -6,11 +6,11 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 16:59:41 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/14 18:59:45 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/17 15:00:06 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "stack.h"
 
 t_node	*stack_pop_top(t_stack *stack)
 {
