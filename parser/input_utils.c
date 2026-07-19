@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 19:02:19 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/14 19:08:21 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/19 19:07:38 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,35 @@ void	free_input(t_input *input)
 	if (input->numbers)
 		free(input->numbers);
 	free(input);
+}
+
+int	count_tokens(char **tokens)
+{
+	int	i;
+
+	i = 0;
+	while (tokens[i])
+		i++;
+	return (i);
+}
+
+int	has_flag_after_number(int argc, char **argv)
+{
+	int	i;
+	int	number_found;
+
+	i = 1;
+	number_found = 0;
+	while (i < argc)
+	{
+		if (has_flag_prefix(argv[i]))
+		{
+			if (number_found)
+				return (1);
+		}
+		else
+			number_found = 1;
+		i++;
+	}
+	return (0);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+         #
+#    By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/18 17:24:11 by eduaaugu          #+#    #+#              #
-#    Updated: 2026/07/15 15:40:15 by jcesar-o         ###   ########.fr        #
+#    Updated: 2026/07/19 19:06:46 by juliopestan      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ PRINTF = $(PRINTF_DIR)/libftprintf.a
 SRC = main.c \
 	  parser/parse_command_line.c \
 	  parser/validation.c \
-	  parser/input_utils.c
+	  parser/input_utils.c \
+	  parser/parser_flags.c 
 
 OBJS = $(SRC:.c=.o)
 

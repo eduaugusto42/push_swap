@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 10:39:58 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/15 20:37:55 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/19 13:34:54 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	has_duplicates(int *numbers, int size)
 int	parse_token(char *token, int *value)
 {
 	long	number;
-	
+
 	if (!is_valid_number(token))
 		return (0);
 	number = ft_atol(token);

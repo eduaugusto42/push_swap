@@ -1,17 +1,19 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/10 14:32:07 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/15 19:33:20 by jcesar-o         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "input.h"
 #include <stdio.h>
+
+static void	print_strategy(t_strategy strategy)
+{
+	if (strategy == SIMPLE)
+		printf("strategy: SIMPLE\n");
+	else if (strategy == MEDIUM)
+		printf("strategy: MEDIUM\n");
+	else if (strategy == COMPLEX)
+		printf("strategy: COMPLEX\n");
+	else if (strategy == ADAPTIVE)
+		printf("strategy: ADAPTIVE\n");
+	else
+		printf("strategy: INVALID\n");
+}
 
 int	main(int argc, char **argv)
 {
@@ -28,6 +30,8 @@ int	main(int argc, char **argv)
 	}
 
 	printf("Quantidade de numeros: %d\n", input->size);
+	print_strategy(input->strategy);
+	printf("benchmark: %d\n", input->benchmark);
 
 	i = 0;
 	while (i < input->size)

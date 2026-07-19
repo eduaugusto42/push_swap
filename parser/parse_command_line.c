@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_command_line.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 10:50:50 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/15 19:34:36 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/19 13:48:21 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 static int	count_numbers(int argc, char **argv)
 {
 	int		i;
-	int		j;
 	char	**tokens;
 	int		total;
 
@@ -23,15 +22,15 @@ static int	count_numbers(int argc, char **argv)
 	total = 0;
 	while (i < argc)
 	{
+		if (has_flag_prefix(argv[i]))
+		{
+			i++;
+			continue ;
+		}
 		tokens = ft_split(argv[i], ' ');
 		if (!tokens)
 			return (-1);
-		j = 0;
-		while (tokens[j])
-		{
-			total++;
-			j++;
-		}
+		total += count_tokens(tokens);
 		free_matrix(tokens);
 		i++;
 	}
@@ -67,6 +66,11 @@ static int	fill_numbers(t_input *input, int argc, char **argv)
 	index = 0;
 	while (i < argc)
 	{
+		if (has_flag_prefix(argv[i]))
+		{
+			i++;
+			continue ;
+		}
 		tokens = ft_split(argv[i], ' ');
 		if (!tokens)
 			return (0);
@@ -88,6 +92,8 @@ static t_input	*init_input(int argc, char **argv)
 	input = malloc(sizeof(t_input));
 	if (!input)
 		return (NULL);
+	input->strategy = ADAPTIVE;
+	input->benchmark = 0;
 	input->numbers = NULL;
 	input->size = count_numbers(argc, argv);
 	if (input->size == -1)
@@ -108,9 +114,16 @@ t_input	*parse_command_line(int argc, char **argv)
 {
 	t_input	*input;
 
+	if (has_flag_after_number(argc, argv))
+		return (NULL);
 	input = init_input(argc, argv);
 	if (!input)
 		return (NULL);
+	if (!parse_flags(argc, argv, input))
+	{
+		free_input(input);
+		return (NULL);
+	}
 	if (!fill_numbers(input, argc, argv))
 	{
 		free_input(input);
