@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:31:27 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/13 19:17:57 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/20 16:15:33 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef STACK_H
+# define STACK_H
+
+# include "ft_printf.h"
 
 typedef struct s_node
 {
@@ -43,3 +45,21 @@ t_node	*stack_pop_bottom(t_stack *stack);
 
 // Bridge from parser to stack
 int	stack_fill_from_array(t_stack *stack, int *numbers, int size);
+
+// Stack operations
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
+
+void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
+
+void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
+
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
+
+#endif

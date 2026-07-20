@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 16:15:15 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/17 16:23:36 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/20 14:28:35 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/stack.h"
 
-void	ra(t_stack *a);
-void	rb(t_stack *b);
-void	rr(t_stack *a, t_stack *b);
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
 
 void	reverse_rotate(t_stack *stack)
 {
@@ -26,17 +26,17 @@ void	reverse_rotate(t_stack *stack)
 	stack_push_top(stack, node);
 }
 
-void	ra(t_stack *a)
+void	rra(t_stack *a)
 {
 	reverse_rotate(a);
 }
 
-void	rb(t_stack *b)
+void	rrb(t_stack *b)
 {
 	reverse_rotate(b);
 }
 
-void	rr(t_stack *a, t_stack *b)
+void	rrr(t_stack *a, t_stack *b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
