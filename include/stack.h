@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:31:27 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/13 19:17:57 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/20 17:56:42 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,6 @@ t_node	*stack_pop_bottom(t_stack *stack);
 
 // Bridge from parser to stack
 int	stack_fill_from_array(t_stack *stack, int *numbers, int size);
+
+// Push functions
+void	stack_push(t_stack *a, t_stack *b)

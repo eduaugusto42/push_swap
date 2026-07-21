@@ -6,38 +6,39 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 16:15:15 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/20 17:07:42 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/20 19:18:18 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/stack.h"
+#include "stack.h"
 
-void	rra(t_stack *a);
-void	rrb(t_stack *b);
-void	rrr(t_stack *a, t_stack *b);
+int	rra(t_stack *a);
+int	rrb(t_stack *b);
+int	rrr(t_stack *a, t_stack *b);
 
-void	reverse_rotate(t_stack *stack)
+int	reverse_rotate(t_stack *stack)
 {
 	t_node	*node;
 
 	if (!stack || stack->size < 2)
-		return ;
+		return (0);
 	node = stack_pop_bottom(stack);
 	stack_push_top(stack, node);
+	return (1);
 }
 
-void	rra(t_stack *a)
+int	rra(t_stack *a)
+{
+	return (reverse_rotate(a));
+}
+
+int	rrb(t_stack *b)
+{
+	return (reverse_rotate(b));
+}
+
+int	rrr(t_stack *a, t_stack *b)
 {
 	reverse_rotate(a);
-}
-
-void	rrb(t_stack *b)
-{
-	reverse_rotate(b);
-}
-
-void	rrr(t_stack *a, t_stack *b)
-{
-	reverse_rotate(a);
-	reverse_rotate(b);
+	return (reverse_rotate(b));
 }
