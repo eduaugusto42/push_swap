@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_command_line.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 10:50:50 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/19 13:48:21 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/21 16:40:42 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ static t_input	*init_input(int argc, char **argv)
 		return (NULL);
 	input->strategy = ADAPTIVE;
 	input->benchmark = 0;
+	input->print_operations = 0;
 	input->numbers = NULL;
 	input->size = count_numbers(argc, argv);
 	if (input->size == -1)

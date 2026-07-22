@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 14:33:50 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/19 13:46:43 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/21 15:03:29 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_input
 	int			size;
 	t_strategy	strategy;
 	int			benchmark;
+	int		print_operations;
 }	t_input;
 
 t_input	*parse_command_line(int argc, char **argv);
