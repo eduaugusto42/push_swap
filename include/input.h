@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 14:33:50 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/21 15:03:29 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/22 15:09:04 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define INPUT_H
 
 # include "ft_printf.h"
+# include "input.h"
 # include "strategy.h"
 
 typedef struct s_input
