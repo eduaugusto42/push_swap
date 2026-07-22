@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_pop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 16:59:41 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/17 15:00:06 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/20 15:50:32 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ t_node	*stack_pop_bottom(t_stack *stack)
 	if (!stack || !stack->bottom)
 		return (NULL);
 	pop_bottom = stack->bottom;
-	stack->bottom = pop_bottom->next;
+	stack->bottom = pop_bottom->prev;
 	if (!stack->bottom)
 		stack->top = NULL;
 	else
-		stack->bottom->prev = NULL;
+		stack->bottom->next = NULL;
 	pop_bottom->next = NULL;
 	pop_bottom->prev = NULL;
 	stack->size--;

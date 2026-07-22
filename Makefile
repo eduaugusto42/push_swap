@@ -6,7 +6,7 @@
 #    By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/18 17:24:11 by eduaaugu          #+#    #+#              #
-#    Updated: 2026/07/15 15:40:15 by jcesar-o         ###   ########.fr        #
+#    Updated: 2026/07/20 14:05:44 by jcesar-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,15 @@ PRINTF = $(PRINTF_DIR)/libftprintf.a
 SRC = main.c \
 	  parser/parse_command_line.c \
 	  parser/validation.c \
-	  parser/input_utils.c
+	  parser/input_utils.c \
+	  parser/parser_flags.c \
+		stack/push.c \
+		stack/reverse_rotate.c \
+		stack/rotate.c \
+		stack/stack_lifecycle.c \
+		stack/stack_pop.c \
+		stack/stack_push.c \
+		stack/swap.c
 
 OBJS = $(SRC:.c=.o)
 
