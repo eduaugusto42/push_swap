@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 14:33:50 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/22 15:09:04 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/22 21:40:55 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,15 @@
 # define INPUT_H
 
 # include "ft_printf.h"
-# include "input.h"
-# include "strategy.h"
+
+typedef enum e_strategy
+{
+	INVALID_STRATEGY,
+	SIMPLE,
+	MEDIUM,
+	COMPLEX,
+	ADAPTIVE
+}	t_strategy;
 
 typedef struct s_input
 {

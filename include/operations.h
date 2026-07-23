@@ -6,15 +6,15 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 23:07:49 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/22 15:11:38 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/23 14:55:56 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef OPERATIONS_H
 # define OPERATIONS_H
 
-#include "stack.h"
-#include "input.h"
+# include "stack.h"
+# include "input.h"
 
 
 typedef struct s_stats

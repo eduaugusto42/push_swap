@@ -6,14 +6,14 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 15:58:19 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/21 23:14:55 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/23 14:52:09 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 
-int	pa(int fd, t_stack *a, t_stack *b, t_stats stats);
-int	pb(int fd, t_stack *b, t_stack *a, t_stats stats);
+int	pa(int fd, t_stack *a, t_stack *b, t_stats *stats);
+int	pb(int fd, t_stack *b, t_stack *a, t_stats *stats);
 
 int	stack_push(t_stack *a, t_stack *b)
 {
@@ -26,7 +26,7 @@ int	stack_push(t_stack *a, t_stack *b)
 	return (1);
 }
 
-int	pa(int fd, t_stack *a, t_stack *b, t_stats stats)
+int	pa(int fd, t_stack *a, t_stack *b, t_stats *stats)
 {
 	if (stack_push(a, b) == 1)
 	{
@@ -39,7 +39,7 @@ int	pa(int fd, t_stack *a, t_stack *b, t_stats stats)
 	return (0);
 }
 
-int	pb(int fd, t_stack *b, t_stack *a, t_stats stats)
+int	pb(int fd, t_stack *b, t_stack *a, t_stats *stats)
 {
 	if (stack_push(a, b) == 1)
 	{

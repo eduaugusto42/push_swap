@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 13:26:01 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/08 16:30:09 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/22 18:30:44 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINTF_H
 
 // Libft
-# include "../libft/libft.h"
+# include "libft.h"
 # include <stdarg.h>
 
 // Functions
