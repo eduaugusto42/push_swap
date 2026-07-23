@@ -6,14 +6,9 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:31:27 by eduaaugu          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/07/21 21:54:21 by eduaaugu         ###   ########.fr       */
-=======
-/*   Updated: 2026/07/21 23:14:09 by eduaaugu         ###   ########.fr       */
->>>>>>> origin/operations
+/*   Updated: 2026/07/23 17:30:09 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef STACK_H
 # define STACK_H
