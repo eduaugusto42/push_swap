@@ -6,11 +6,12 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 10:50:50 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/21 16:40:42 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/23 15:46:38 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "input.h"
+#include "printf.h"
 
 static int	count_numbers(int argc, char **argv)
 {

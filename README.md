@@ -1,4 +1,4 @@
-*Este projeto foi criado como parte do currículo da 42 por eduaaugu, jcesar-o*
+*Este projeto foi criado como parte do currículo da 42 por eduaaugu, jcesar-o.*
 
 # Description
 
@@ -88,3 +88,27 @@ To remove all compiled files and rebuild the project from scratch:
 make fclean
 make
 ```
+## Resources
+
+### References
+
+- The official 42 `push_swap` project subject.
+- System manual pages:
+  - `man malloc`
+  - `man free`
+- GNU C Library (glibc) documentation.
+- Official Git documentation.
+- 42 Norminette documentation.
+- Articles and tutorials about linked lists, stack data structures, and sorting algorithms.
+
+### AI Usage
+
+Artificial Intelligence was used as a supporting tool throughout the development of the project. Its use included:
+
+- Explaining concepts related to stacks, linked lists, and sorting algorithms.
+- Clarifying Git commands and version control workflows.
+- Assisting with code review and identifying possible improvements.
+- Helping debug compilation and logical errors.
+- Discussing project architecture and module organization while complying with the Norminette requirements.
+
+All project design decisions, implementation, testing, and code validation were carried out by the project authors.

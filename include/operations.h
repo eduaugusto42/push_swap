@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 23:07:49 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/23 14:55:56 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/23 15:27:09 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "stack.h"
 # include "input.h"
+# include "printf.h"
 
 
 typedef struct s_stats
