@@ -6,15 +6,15 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 16:15:15 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/21 23:15:47 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/23 14:54:32 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 
-int	rra(int fd, t_stack *a, t_stats stats);
-int	rrb(int fd, t_stack *b, t_stats stats);
-int	rrr(int fd, t_stack *a, t_stack *b, t_stats stats);
+int	rra(int fd, t_stack *a, t_stats *stats);
+int	rrb(int fd, t_stack *b, t_stats *stats);
+int	rrr(int fd, t_stack *a, t_stack *b, t_stats *stats);
 
 int	reverse_rotate(t_stack *stack)
 {
@@ -27,7 +27,7 @@ int	reverse_rotate(t_stack *stack)
 	return (1);
 }
 
-int	rra(int fd, t_stack *a, t_stats stats)
+int	rra(int fd, t_stack *a, t_stats *stats)
 {
 	if (reverse_rotate(a) == 1)
 	{
@@ -40,7 +40,7 @@ int	rra(int fd, t_stack *a, t_stats stats)
 	return (0);
 }
 
-int	rrb(int fd, t_stack *b, t_stats stats)
+int	rrb(int fd, t_stack *b, t_stats *stats)
 {
 	if (reverse_rotate(b) == 1)
 	{
@@ -53,7 +53,7 @@ int	rrb(int fd, t_stack *b, t_stats stats)
 	return (0);
 }
 
-int	rrr(int fd, t_stack *a, t_stack *b, t_stats stats)
+int	rrr(int fd, t_stack *a, t_stack *b, t_stats *stats)
 {
 	if (reverse_rotate(a) == 1 || reverse_rotate(b) == 1)
 	{

@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/11 13:26:01 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/22 18:30:44 by eduaaugu         ###   ########.fr       */
+/*   Created: 2026/07/22 17:44:22 by eduaaugu          #+#    #+#             */
+/*   Updated: 2026/07/22 21:46:20 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "algorithm.h"
 
-// Libft
-# include "libft.h"
-# include <stdarg.h>
+void	sort_simple(t_stack *a, t_stack *b, t_stats *stats, int fd)
+{
+	int	i;
 
-// Functions
-int	ft_printf(const char *format, ...);
-int	ft_print_char(char c);
-int	ft_print_str(char *s);
-int	ft_print_pointer(void *p);
-int	ft_print_dec(int i);
-int	ft_print_unsigned(unsigned int u);
-int	ft_print_hex(unsigned long x, char c);
-
-#endif
+	i = 0;
+	while (i <= a->bottom->index)
+	{
+		i++;
+	}
+}
