@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 13:26:01 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/22 18:30:44 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/23 17:41:29 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINTF_H
 
 // Libft
-# include "libft.h"
+# include "../libft/libft.h"
 # include <stdarg.h>
 
 // Functions

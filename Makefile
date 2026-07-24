@@ -6,7 +6,7 @@
 #    By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/18 17:24:11 by eduaaugu          #+#    #+#              #
-#    Updated: 2026/07/22 20:41:55 by jcesar-o         ###   ########.fr        #
+#    Updated: 2026/07/24 12:58:50 by jcesar-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = main.c \
 	  parser/validation.c \
 	  parser/input_utils.c \
 	  parser/parser_flags.c \
-		benchmark/benchmark_disorder.c
+		
 
 
 OBJS = $(SRC:.c=.o)

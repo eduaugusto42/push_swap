@@ -3,14 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 10:39:58 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/19 13:34:54 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/24 17:46:56 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "input.h"
+
+int	convert_to_int(char *token, int *value)
+{
+	long	number;
+
+	if (!is_valid_number(token))
+		return (0);
+	number = ft_atol(token);
+	if (number < INT_MIN || number > INT_MAX)
+		return (0);
+	*value = (int)number;
+	return (1);
+}
 
 int	is_valid_number(char *token)
 {
@@ -32,18 +45,18 @@ int	is_valid_number(char *token)
 	return (1);
 }
 
-int	has_duplicates(int *numbers, int size)
+int	*has_duplicates(t_input *input)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < size)
+	while (i < input->size)
 	{
 		j = i + 1;
-		while (j < size)
+		while (j < input->size)
 		{
-			if (numbers[i] == numbers[j])
+			if (input->numbers[i] == input->numbers[j])
 				return (1);
 			j++;
 		}
@@ -52,15 +65,29 @@ int	has_duplicates(int *numbers, int size)
 	return (0);
 }
 
-int	parse_token(char *token, int *value)
+double	compute_disorder(t_input *input)
 {
-	long	number;
+	int	i;
+	int	j;
+	int	mistakes;
+	int	total_pairs;
 
-	if (!is_valid_number(token))
+	mistakes = 0;
+	total_pairs = 0;
+	i = 0;
+	while (i < input->size)
+	{
+		j = i + 1;
+		while (j < input->size)
+		{
+			total_pairs++;
+			if (input->numbers[i] > input->numbers[j])
+				mistakes++;
+			j++;
+		}
+		i++;
+	}
+	if (total_pairs == 0)
 		return (0);
-	number = ft_atol(token);
-	if (number < INT_MIN || number > INT_MAX)
-		return (0);
-	*value = (int)number;
-	return (1);
+	return ((double)mistakes / total_pairs);
 }

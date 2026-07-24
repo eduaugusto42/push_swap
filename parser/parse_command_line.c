@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 10:50:50 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/21 16:40:42 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/24 17:47:52 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ static int	count_numbers(int argc, char **argv)
 		i++;
 	}
 	if (total == 0)
-		return (-1);
+		return (0);
 	return (total);
 }
 
-static int	fill_tokens(t_input *input, char **tokens, int *index)
+static int	fill_numbers(t_input *input, char **tokens, int *index)
 {
 	int	j;
 	int	value;
@@ -47,7 +47,7 @@ static int	fill_tokens(t_input *input, char **tokens, int *index)
 	j = 0;
 	while (tokens[j])
 	{
-		if (!parse_token(tokens[j], &value))
+		if (!convert_to_int(tokens[j], &value))
 			return (0);
 		input->numbers[*index] = value;
 		(*index)++;
@@ -56,7 +56,7 @@ static int	fill_tokens(t_input *input, char **tokens, int *index)
 	return (1);
 }
 
-static int	fill_numbers(t_input *input, int argc, char **argv)
+static int	parse_numbers(int argc, char **argv, t_input *input)
 {
 	int		i;
 	int		index;
@@ -74,7 +74,7 @@ static int	fill_numbers(t_input *input, int argc, char **argv)
 		tokens = ft_split(argv[i], ' ');
 		if (!tokens)
 			return (0);
-		if (!fill_tokens(input, tokens, &index))
+		if (!fill_numbers(input, tokens, &index))
 		{
 			free_matrix(tokens);
 			return (0);
@@ -92,22 +92,15 @@ static t_input	*init_input(int argc, char **argv)
 	input = malloc(sizeof(t_input));
 	if (!input)
 		return (NULL);
-	input->strategy = ADAPTIVE;
+	input->strategy = NO_STRATEGY;
 	input->benchmark = 0;
-	input->print_operations = 0;
 	input->numbers = NULL;
 	input->size = count_numbers(argc, argv);
-	if (input->size == -1)
-	{
-		free_input(input);
-		return (NULL);
-	}
+	if (input->size == 0)
+		return (free_input(input));
 	input->numbers = malloc(sizeof(int) * input->size);
 	if (!input->numbers)
-	{
-		free_input(input);
-		return (NULL);
-	}
+		return (free_input(input));
 	return (input);
 }
 
@@ -121,19 +114,11 @@ t_input	*parse_command_line(int argc, char **argv)
 	if (!input)
 		return (NULL);
 	if (!parse_flags(argc, argv, input))
-	{
-		free_input(input);
-		return (NULL);
-	}
-	if (!fill_numbers(input, argc, argv))
-	{
-		free_input(input);
-		return (NULL);
-	}
-	if (has_duplicates(input->numbers, input->size))
-	{
-		free_input(input);
-		return (NULL);
-	}
+		return (free_input(input));
+	if (!parse_numbers(argc, argv, input))
+		return (free_input(input));
+	if (has_duplicates(input))
+		return (free_input(input));
+	input->disorder = compute_disorder(input);
 	return (input);
 }

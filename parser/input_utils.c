@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 19:02:19 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/19 19:07:38 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/24 16:02:48 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,14 @@ void	free_matrix(char **matrix)
 	free(matrix);
 }
 
-void	free_input(t_input *input)
+t_input	*free_input(t_input *input)
 {
 	if (!input)
-		return ;
+		return (NULL);
 	if (input->numbers)
 		free(input->numbers);
 	free(input);
+	return (NULL);
 }
 
 int	count_tokens(char **tokens)
@@ -89,4 +90,31 @@ int	has_flag_after_number(int argc, char **argv)
 		i++;
 	}
 	return (0);
+}
+
+double	compute_disorder(t_input *input)
+{
+	int	i;
+	int	j;
+	int	mistakes;
+	int	total_pairs;
+
+	mistakes = 0;
+	total_pairs = 0;
+	i = 0;
+	while (i < input->size)
+	{
+		j = i + 1;
+		while (j < input->size)
+		{
+			total_pairs++;
+			if (input->numbers[i] > input->numbers[j])
+				mistakes++;
+			j++;
+		}
+		i++;
+	}
+	if (total_pairs == 0)
+		return (0);
+	return ((double)mistakes / total_pairs);
 }
