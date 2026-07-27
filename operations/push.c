@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 15:58:19 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/23 14:52:09 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/26 19:08:10 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
+#include "stack.h"
 
-int	pa(int fd, t_stack *a, t_stack *b, t_stats *stats);
-int	pb(int fd, t_stack *b, t_stack *a, t_stats *stats);
+int	pa(t_input *input, t_stack *a, t_stack *b, t_stats *stats);
+int	pb(t_input *input, t_stack *b, t_stack *a, t_stats *stats);
 
 int	stack_push(t_stack *a, t_stack *b)
 {
@@ -26,26 +27,26 @@ int	stack_push(t_stack *a, t_stack *b)
 	return (1);
 }
 
-int	pa(int fd, t_stack *a, t_stack *b, t_stats *stats)
+int	pa(t_input *input, t_stack *a, t_stack *b, t_stats *stats)
 {
 	if (stack_push(a, b) == 1)
 	{
-		stats->pa++;
+		stats->op_count[PA]++;
 		stats->total++;
-		if (fd == 1)
+		if (input->fd == 1)
 			ft_printf("pa\n");
 		return (1);
 	}
 	return (0);
 }
 
-int	pb(int fd, t_stack *b, t_stack *a, t_stats *stats)
+int	pb(t_input *input, t_stack *b, t_stack *a, t_stats *stats)
 {
-	if (stack_push(a, b) == 1)
+	if (stack_push(b, a) == 1)
 	{
-		stats->pb++;
+		stats->op_count[PB]++;
 		stats->total++;
-		if (fd == 1)
+		if (input->fd == 1)
 			ft_printf("pb\n");
 		return (1);
 	}

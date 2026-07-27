@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 10:39:58 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/24 17:46:56 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/26 17:23:09 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "input.h"
+#include "libft.h"
 
 int	convert_to_int(char *token, int *value)
 {
@@ -45,7 +46,7 @@ int	is_valid_number(char *token)
 	return (1);
 }
 
-int	*has_duplicates(t_input *input)
+int	has_duplicates(t_input *input)
 {
 	int	i;
 	int	j;
@@ -65,29 +66,3 @@ int	*has_duplicates(t_input *input)
 	return (0);
 }
 
-double	compute_disorder(t_input *input)
-{
-	int	i;
-	int	j;
-	int	mistakes;
-	int	total_pairs;
-
-	mistakes = 0;
-	total_pairs = 0;
-	i = 0;
-	while (i < input->size)
-	{
-		j = i + 1;
-		while (j < input->size)
-		{
-			total_pairs++;
-			if (input->numbers[i] > input->numbers[j])
-				mistakes++;
-			j++;
-		}
-		i++;
-	}
-	if (total_pairs == 0)
-		return (0);
-	return ((double)mistakes / total_pairs);
-}

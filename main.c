@@ -1,30 +1,32 @@
-#include <stdio.h>
 #include "input.h"
-#include "benchmark.h"
 #include "stack.h"
 #include "algorithm.h"
+#include "benchmark.h"
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
-	t_input *input;
-	t_stack	*a;
-	t_stack	*b;
+	t_input	*input;
+	t_stats	*stats;
+	t_stack	a;
+	t_stack	b;
 
-	stack_init(a);
-	stack_init(b);
-	input = parse_command_line(argc, argv);
 	if (argc == 1)
 		return (0);
-	if (input->disorder == 0)
-		return (0);
-	if (!parse_command_line(argc, argv))
+	stack_init(&a);
+	stack_init(&b);
+	input = parse_command_line(argc, argv);
+	if (!input)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	stack_fill_from_array(&a, input->numbers, input->size);
+	stats = init_stats();
+	if (input->disorder == 0)
+		return (0);
 	if (input->disorder <= 0.2)
-		sort_simple(a, b, stats, input);
-
-	printf("Input accepted\n");
+		sort_simple(&a, &b, stats, input);
+	print_banch(input, stats);
 	return (0);
 }

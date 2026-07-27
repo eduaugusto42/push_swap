@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parse_command_line.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 10:50:50 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/24 17:47:52 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/26 15:55:58 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "input.h"
+#include "ft_printf.h"
+#include "libft.h"
 
 static int	count_numbers(int argc, char **argv)
 {
@@ -96,6 +98,7 @@ static t_input	*init_input(int argc, char **argv)
 	input->benchmark = 0;
 	input->numbers = NULL;
 	input->size = count_numbers(argc, argv);
+	input->fd = 1;
 	if (input->size == 0)
 		return (free_input(input));
 	input->numbers = malloc(sizeof(int) * input->size);

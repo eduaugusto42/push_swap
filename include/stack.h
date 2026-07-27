@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:31:27 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/23 17:32:59 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/26 17:03:33 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
 
-# include "ft_printf.h"
+# include "libft.h"
+# include "input.h"
 
 typedef struct s_node
 {

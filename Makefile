@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+         #
+#    By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/18 17:24:11 by eduaaugu          #+#    #+#              #
-#    Updated: 2026/07/24 12:58:50 by jcesar-o         ###   ########.fr        #
+#    Updated: 2026/07/26 22:27:47 by juliopestan      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,16 @@ SRC = main.c \
 	  parser/validation.c \
 	  parser/input_utils.c \
 	  parser/parser_flags.c \
-		
-
+	  stack/stack_lifecycle.c \
+	  stack/stack_pop.c \
+	  stack/stack_push.c \
+	  operations/push.c \
+	  operations/reverse_rotate.c \
+	  operations/rotate.c \
+	  operations/swap.c \
+	  benchmark/init_stats.c \
+	  benchmark/print_banchmark.c \
+	  algorithm/simple.c 
 
 OBJS = $(SRC:.c=.o)
 

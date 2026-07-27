@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   input_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 19:02:19 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/24 16:02:48 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/26 15:59:48 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "input.h"
+#include "libft.h"
 
 long	ft_atol(char *nbr)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 16:20:30 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/23 17:47:55 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/26 17:19:57 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 # define ALGORITHM_H
 
 # include "stack.h"
-# include "operations.h"
-# include "algorithm.h"
 # include "benchmark.h"
 
-void	sort_simple(t_stack *a, t_stack *b, t_stats *stats, int fd);
-void	sort_medium(t_stack *a, t_stack *b, t_stats *stats, int fd);
-void	sort_complex(t_stack *a, t_stack *b, t_stats *stats, int fd);
-void	sort_adaptive(t_stack *a, t_stack *b, t_stats *stats, int fd);
+typedef struct s_input t_input;
+
+void	sort_simple(t_stack *a, t_stack *b, t_stats *stats, t_input *input);
 
 #endif

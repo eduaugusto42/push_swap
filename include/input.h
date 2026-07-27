@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   input.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 14:33:50 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/24 17:47:08 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/26 16:02:00 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INPUT_H
 # define INPUT_H
 
-# include "ft_printf.h"
+# include "libft.h"
 
 typedef enum e_strategy
 {
@@ -31,6 +31,7 @@ typedef struct s_input
 	int			*numbers;
 	int			size;
 	double		disorder;
+	int			fd;
 }	t_input;
 
 t_input	*parse_command_line(int argc, char **argv);

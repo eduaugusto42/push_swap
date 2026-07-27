@@ -3,34 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   benchmark.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:44:26 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/24 15:43:19 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/26 18:59:50 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BENCHMARK_H
 # define BENCHMARK_H
 
-# include "input.h"
+# include "ft_printf.h"
+
+typedef struct s_input t_input;
+
+typedef enum e_operation
+{
+	SA,
+	SB,
+	SS,
+	PA,
+	PB,
+	RA,
+	RB,
+	RR,
+	RRA,
+	RRB,
+	RRR,
+	COUNT
+}	t_operation;
 
 typedef struct s_stats
 {
-	int	total_ops;
-	int	op_count[OP_COUNT];
+	int	total;
+	int	op_count[COUNT];
 }	t_stats;
 
-typedef struct s_benchmark
-{
-	int	active;
-	double	disorder;
-	t_strategy	strategy;
-	char	*complexity;
-	t_stats	*stats;
-}	t_benchmark
-
-void	benchmark_init(t_benchmark *bench, t_input *input);
-void	record_operation(t_input *input, t_benchmark *bench, t_operation op);
+t_stats	*init_stats(void);
+void	print_banch(t_input *input, t_stats *stats);
 
 #endif

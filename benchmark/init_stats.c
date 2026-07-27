@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_benchmark.c                                   :+:      :+:    :+:   */
+/*   init_stats.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 19:17:45 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/24 15:46:32 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/26 14:45:25 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,8 @@
 #include "input.h"
 
 
-void	benchmark_init(t_benchmark *bench, t_input *input)
-{	
-	bench->active = input->benchmark;
-	bench->disorder = input->disorder;
-	bench->strategy = input->strategy;
-	bench->complexity = NULL;
-	bench->stats = NULL;
+t_stats	*init_stats(void)
+{
+	return (ft_calloc(1, sizeof(t_stats)));
 }
+

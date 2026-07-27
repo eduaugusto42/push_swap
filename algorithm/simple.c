@@ -3,19 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 17:44:22 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/23 16:37:37 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/26 17:25:54 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "algorithm.h"
-#include "operations.h"
+# include "ft_printf.h"
+# include "stack.h"
+# include "operations.h"
+# include "algorithm.h"
+# include "benchmark.h"
 
 void	assign_index(t_stack *stack);
 
-void	sort_simple(t_stack *a, t_stack *b, t_stats *stats, int fd)
+void	sort_simple(t_stack *a, t_stack *b, t_stats *stats, t_input *input)
 {
 	t_node	*cursor;
 	t_node	*smallest;
@@ -33,14 +36,14 @@ void	sort_simple(t_stack *a, t_stack *b, t_stats *stats, int fd)
 		assign_index(a);
 		if (a->size / 2 >= smallest->index)
 			while(a->top->value != smallest->value)
-				ra(fd, a, stats);
+				ra(input, a, stats);
 		else
 			while(a->top->value != smallest->value)
-				rra(fd, a, stats);
-		pb(fd, b, a, stats);
+				rra(input, a, stats);
+		pb(input, b, a, stats);
 	}
 	while(b->top)
-		pa(fd, a, b, stats);
+		pa(input, a, b, stats);
 }
 
 void	assign_index(t_stack *stack)
