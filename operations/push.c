@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 15:58:19 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/23 14:52:09 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/27 17:31:29 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	pa(int fd, t_stack *a, t_stack *b, t_stats *stats)
 
 int	pb(int fd, t_stack *b, t_stack *a, t_stats *stats)
 {
-	if (stack_push(a, b) == 1)
+	if (stack_push(b, a) == 1)
 	{
 		stats->pb++;
 		stats->total++;
