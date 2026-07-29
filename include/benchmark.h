@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   benchmark.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:44:26 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/26 18:59:50 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/29 18:51:46 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_stats
 }	t_stats;
 
 t_stats	*init_stats(void);
+t_stats	*init_algorithm(void);
 void	print_banch(t_input *input, t_stats *stats);
 
 #endif

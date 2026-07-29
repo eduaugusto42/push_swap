@@ -4,17 +4,22 @@
 #include "benchmark.h"
 #include <stdio.h>
 
+
 int	main(int argc, char **argv)
 {
 	t_input	*input;
 	t_stats	*stats;
-	t_stack	a;
-	t_stack	b;
+  t_algorithm *alg;
+	t_stack	*a;
+	t_stack	*b;
 
 	if (argc == 1)
 		return (0);
 	stack_init(&a);
 	stack_init(&b);
+  alg = init_algorithm();
+  alg->a = a;
+  alg->b = b;
 	input = parse_command_line(argc, argv);
 	if (!input)
 	{
@@ -26,7 +31,7 @@ int	main(int argc, char **argv)
 	if (input->disorder == 0)
 		return (0);
 	if (input->disorder <= 0.2)
-		sort_simple(&a, &b, stats, input);
+		sort_simple(alg);
 	print_banch(input, stats);
 	return (0);
 }
