@@ -3,60 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
+/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 17:44:22 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/26 17:25:54 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/28 18:39:29 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_printf.h"
-# include "stack.h"
-# include "operations.h"
-# include "algorithm.h"
-# include "benchmark.h"
+#include "algorithm.h"
+#include "operations.h"
 
-void	assign_index(t_stack *stack);
-
-void	sort_simple(t_stack *a, t_stack *b, t_stats *stats, t_input *input)
+void	sort_simple(t_algorithm *alg)
 {
-	t_node	*cursor;
-	t_node	*smallest;
+	int	i;
 
-	while (a->top)
+	i = 0;
+	assign_sorted_index(alg->a);
+	while (alg->a->top)
 	{
-		cursor = a->top;
-		smallest = a->top;
-		while (cursor)
-		{
-			cursor = cursor->next;
-			if (cursor && cursor->value < smallest->value)
-				smallest = cursor;
-		}
-		assign_index(a);
-		if (a->size / 2 >= smallest->index)
-			while(a->top->value != smallest->value)
-				ra(input, a, stats);
-		else
-			while(a->top->value != smallest->value)
-				rra(input, a, stats);
-		pb(input, b, a, stats);
+		rotate_to_top(i, alg, ra, rra);
+		pb(alg->fd, alg->b, alg->a, alg->stats);
+		i++;
 	}
-	while(b->top)
-		pa(input, a, b, stats);
+	while (alg->b->top)
+		pa(alg->fd, alg->a, alg->b, alg->stats);
 }
-
-void	assign_index(t_stack *stack)
-{
-	int		order;
-	t_node	*cursor;
-
-	order = 0;
-	cursor = stack->top;
-	while (cursor)
-	{
-		cursor->index = order++;
-		cursor = cursor->next;
-	}
-}
-

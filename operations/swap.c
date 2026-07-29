@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
+/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 15:02:17 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/26 14:36:14 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/29 16:37:23 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 
-int	sa(t_input *input, t_stack *a, t_stats *stats);
-int	sb(t_input *input, t_stack *b, t_stats *stats);
-int	ss(t_input *input, t_stack *a, t_stack *b, t_stats *stats);
+void	sa(t_stack *a, t_stats *stats);
+void	sb(t_stack *b, t_stats *stats);
+void	ss(t_stack *a, t_stack *b, t_stats *stats);
 
 int	stack_swap(t_stack *stack)
 {
@@ -30,41 +30,32 @@ int	stack_swap(t_stack *stack)
 	return (1);
 }
 
-int	sa(t_input *input, t_stack *a, t_stats *stats)
+void	sa(t_stack *a, t_stats *stats)
 {
 	if (stack_swap(a) == 1)
 	{
-		stats->op_count[SA]++;
+		stats->sa++;
 		stats->total++;
-		if (input->fd == 1)
-			ft_printf("sa\n");
-		return (1);
+		ft_putstr_fd("sa\n", 1);
 	}
-	return (0);
 }
 
-int	sb(t_input *input, t_stack *b, t_stats *stats)
+void	sb(t_stack *b, t_stats *stats)
 {
 	if (stack_swap(b) == 1)
 	{
-		stats->op_count[SB]++;
+		stats->sb++;
 		stats->total++;
-		if (input->fd == 1)
-			ft_printf("sb\n");
-		return (1);
+		ft_putstr_fd("sb\n", 1);
 	}
-	return (0);
 }
 
-int	ss(t_input *input, t_stack *a, t_stack *b, t_stats *stats)
+void	ss(t_stack *a, t_stack *b, t_stats *stats)
 {
 	if (stack_swap(a) == 1 || stack_swap(b) == 1)
 	{
-		stats->op_count[SS]++;
+		stats->ss++;
 		stats->total++;
-		if (input->fd == 1)
-			ft_printf("ss\n");
-		return (1);
+		ft_putstr_fd("ss\n", 1);
 	}
-	return (0);
 }

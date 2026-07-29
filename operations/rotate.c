@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
+/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 15:38:17 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/26 14:35:33 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/29 16:38:44 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 
-int	ra(t_input *input, t_stack *a, t_stats *stats);
-int	rb(t_input *input, t_stack *b, t_stats *stats);
-int	rr(t_input *input, t_stack *a, t_stack *b, t_stats *stats);
+void	ra(t_stack *a, t_stats *stats);
+void	rb(t_stack *b, t_stats *stats);
+void	rr(t_stack *a, t_stack *b, t_stats *stats);
 
 int	stack_rotate(t_stack *stack)
 {
@@ -27,41 +27,32 @@ int	stack_rotate(t_stack *stack)
 	return (1);
 }
 
-int	ra(t_input *input, t_stack *a, t_stats *stats)
+void	ra(t_stack *a, t_stats *stats)
 {
 	if (stack_rotate(a) == 1)
 	{
-		stats->op_count[RA]++;
+		stats->ra++;
 		stats->total++;
-		if (input->fd == 1)
-			ft_printf("ra\n");
-		return (1);
+		ft_putstr_fd("ra\n", 1);
 	}
-	return (0);
 }
 
-int	rb(t_input *input, t_stack *b, t_stats *stats)
+void	rb(t_stack *b, t_stats *stats)
 {
 	if (stack_rotate(b) == 1)
 	{
-		stats->op_count[RB]++;
+		stats->rb++;
 		stats->total++;
-		if (input->fd == 1)
-			ft_printf("rb\n");
-		return (1);
+		ft_putstr_fd("rb\n", 1);
 	}
-	return (0);
 }
 
-int	rr(t_input *input, t_stack *a, t_stack *b, t_stats *stats)
+void	rr(t_stack *a, t_stack *b, t_stats *stats)
 {
 	if (stack_rotate(a) == 1 || stack_rotate(b) == 1)
 	{
-		stats->op_count[RR]++;
+		stats->rr++;
 		stats->total++;
-		if (input->fd == 1)
-			ft_printf("rr\n");
-		return (1);
+		ft_putstr_fd("rr\n", 1);
 	}
-	return (0);
 }
