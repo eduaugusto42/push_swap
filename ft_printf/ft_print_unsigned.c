@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_unsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 11:47:59 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/06/17 14:13:33 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/29 18:17:39 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int	ft_print_unsigned(unsigned int i)
 	if (i / 10 != 0)
 		len += ft_print_unsigned(i / 10);
 	c = '0' + (i % 10);
-	ft_putchar_fd(c, 1);
+	ft_putchar_fd(c, 2);
 	return (len);
 }

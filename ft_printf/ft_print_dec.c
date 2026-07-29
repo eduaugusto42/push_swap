@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_dec.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 11:47:59 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/06/17 11:59:41 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/29 18:16:56 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_print_dec(int i)
 	int		len;
 
 	itoa = ft_itoa(i);
-	ft_putstr_fd(itoa, 1);
+	ft_putstr_fd(itoa, 2);
 	len = ft_strlen(itoa);
 	free(itoa);
 	return (len);

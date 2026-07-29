@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 10:31:25 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/06/17 10:42:19 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/29 18:16:50 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	ft_print_char(char c)
 {
-	ft_putchar_fd(c, 1);
+	ft_putchar_fd(c, 2);
 	return (1);
 }

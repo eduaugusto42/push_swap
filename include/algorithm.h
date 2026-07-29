@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 16:20:30 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/28 17:34:49 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/29 18:29:21 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "stack.h"
 # include "operations.h"
+# include "input.h"
 
 typedef struct s_algorithm
 {
@@ -24,12 +25,12 @@ typedef struct s_algorithm
 	t_stats	*stats;
 }	t_algorithm;
 
-double	compute_disorder(int *numbers, int size);
+//double	compute_disorder(int *numbers, int size);
 
 void	sort_simple(t_algorithm *alg);
 void	sort_medium(t_algorithm *alg);
-void	sort_complex(t_algorithm *alg);
-void	sort_adaptive(t_algorithm *alg);
+//void	sort_complex(t_algorithm *alg);
+//void	sort_adaptive(t_algorithm *alg);
 
 int		find_index_position(int index, t_stack *stack);
 void	assign_sorted_index(t_stack *stack);

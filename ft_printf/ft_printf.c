@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:44:46 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/06/18 11:16:36 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/29 18:18:05 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int	ft_print_handler(const char *format, va_list args)
 		return (ft_print_hex(va_arg(args, unsigned int), format[0]));
 	else if (*format == '%')
 	{
-		ft_putchar_fd('%', 1);
+		ft_putchar_fd('%', 2);
 		return (1);
 	}
 	return (-1);
