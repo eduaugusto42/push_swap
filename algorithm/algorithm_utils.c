@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 12:49:23 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/28 18:53:59 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/29 16:48:47 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int	find_index_position(int index, t_stack *stack)
 }
 
 void	rotate_to_top(int target, t_algorithm *alg,
-		int (*r)(int, t_stack *, t_stats *),
-		int (*rr)(int, t_stack *, t_stats *))
+		void (*r)(t_stack *, t_stats *),
+		void (*rr)(t_stack *, t_stats *))
 {
 	int		position;
 	t_stack *stack;
@@ -66,8 +66,8 @@ void	rotate_to_top(int target, t_algorithm *alg,
 	position = find_index_position(target, stack);
 	if (stack->size / 2 >= position)
 		while (stack->top->index != target)
-			r(alg->fd, stack, alg->stats);
+			r(stack, alg->stats);
 	else
 		while (stack->top->index != target)
-			rr(alg->fd, stack, alg->stats);
+			rr(stack, alg->stats);
 }
