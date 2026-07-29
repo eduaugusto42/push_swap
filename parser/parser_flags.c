@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_flags.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 21:54:52 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/19 13:34:31 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/29 16:09:30 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
