@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 16:47:27 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/28 19:28:30 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/29 16:15:00 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ void	sort_medium(t_algorithm *alg)
 	{
 		while(alg->a->top && alg->b->size < chunk * chunk_size)
 		{
-			current = alg->a->top;
-			while (current->index > chunk * chunk_size)
+			current = alg->a->top; // TODO current pode virar null e dar seg fault;
 				current = current->next;
 			rotate_to_top(current->index, alg, ra, rra);
 			pb(alg->fd, alg->b, alg->a, alg->stats);

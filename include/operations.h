@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 23:07:49 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/23 14:55:56 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/29 16:33:33 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ typedef struct s_stats
 }	t_stats;
 
 // Operations functions;
-int	pa(int fd, t_stack *a, t_stack *b, t_stats *stats);
-int	pb(int fd, t_stack *b, t_stack *a, t_stats *stats);
-int	sa(int fd, t_stack *a, t_stats *stats);
-int	sb(int fd, t_stack *b, t_stats *stats);
-int	ss(int fd, t_stack *a, t_stack *b, t_stats *stats);
-int	ra(int fd, t_stack *a, t_stats *stats);
-int	rb(int fd, t_stack *b, t_stats *stats);
-int	rr(int fd, t_stack *a, t_stack *b, t_stats *stats);
-int	rra(int fd, t_stack *a, t_stats *stats);
-int	rrb(int fd, t_stack *b, t_stats *stats);
-int	rrr(int fd, t_stack *a, t_stack *b, t_stats *stats);
+void	pa(t_stack *a, t_stack *b, t_stats *stats);
+void	pb(t_stack *b, t_stack *a, t_stats *stats);
+void	sa(t_stack *a, t_stats *stats);
+void	sb(t_stack *b, t_stats *stats);
+void	ss(t_stack *a, t_stack *b, t_stats *stats);
+void	ra(t_stack *a, t_stats *stats);
+void	rb(t_stack *b, t_stats *stats);
+void	rr(t_stack *a, t_stack *b, t_stats *stats);
+void	rra(t_stack *a, t_stats *stats);
+void	rrb(t_stack *b, t_stats *stats);
+void	rrr(t_stack *a, t_stack *b, t_stats *stats);
 
 # endif
