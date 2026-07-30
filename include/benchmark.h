@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:44:26 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/29 18:51:46 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/29 19:13:05 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ typedef struct s_stats
 }	t_stats;
 
 t_stats	*init_stats(void);
-t_stats	*init_algorithm(void);
 void	print_banch(t_input *input, t_stats *stats);
 
 #endif

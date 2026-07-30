@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 15:58:19 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/29 16:27:58 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/29 19:26:08 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	pa(t_stack *a, t_stack *b, t_stats *stats)
 {
 	if (stack_push(a, b) == 1)
 	{
-		stats->pa++;
+		stats->PA++;
 		stats->total++;
 		ft_putstr_fd("pa\n", 1);
 	}
@@ -40,8 +40,7 @@ void	pb(t_stack *b, t_stack *a, t_stats *stats)
 {
 	if (stack_push(b, a) == 1)
 	{
-		stats->pb++;
-		stats->total++;
+		stats->PB++;
 		ft_putstr_fd("pb\n", 1);
 	}
 }

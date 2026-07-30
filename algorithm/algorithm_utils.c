@@ -6,13 +6,13 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 12:49:23 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/29 16:48:47 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/30 12:07:48 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "algorithm.h"
 
-void	assign_sorted_index(t_stack *stack)
+void	rank_index(t_stack *stack)
 {
 	t_node	*cursor;
 	t_node	*order;

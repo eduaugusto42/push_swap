@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 23:07:49 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/29 16:33:33 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/29 19:08:50 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,7 @@
 
 # include "stack.h"
 # include "input.h"
-
-
-typedef struct s_stats
-{
-	int	sa;
-	int	sb;
-	int	ss;
-	int	pa;
-	int	pb;
-	int	ra;
-	int	rb;
-	int	rr;
-	int	rra;
-	int	rrb;
-	int	rrr;
-	int	total;
-}	t_stats;
+# include "benchmark.h"
 
 // Operations functions;
 void	pa(t_stack *a, t_stack *b, t_stats *stats);

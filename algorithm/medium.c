@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 16:47:27 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/29 18:28:29 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/30 12:48:24 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_sqrt(int nb);
 int	chunk_exists(t_stack *stack, int chunk, int chunk_size);
 int	find_best_chunk_target(t_stack *stack, int chunk, int chunk_size);
 
-void	sort_medium(t_algorithm *alg)
+void	chunk_sort(t_algorithm *alg)
 {
 	int		chunk;
 	int		chunk_size;
@@ -25,7 +25,7 @@ void	sort_medium(t_algorithm *alg)
 
 	chunk = 0;
 	chunk_size = ft_sqrt(alg->a->size);
-	assign_sorted_index(alg->a);
+	rank_index(alg->a);
 	while (alg->a->top)
 	{
 		while(chunk_exists(alg->a, chunk, chunk_size))
