@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 18:59:38 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/31 17:26:39 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/31 17:30:22 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,6 @@ t_algorithm *algorithm_init(void)
     alg = malloc(sizeof(t_algorithm));
     if (!alg)
         return (NULL);
-	alg->a = NULL;
-	alg->b = NULL;
-	alg->stats = NULL;
     alg->a = malloc(sizeof(t_stack));
     if (!alg->a)
         return (free_algorithm(alg));
