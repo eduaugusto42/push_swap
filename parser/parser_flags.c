@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 21:54:52 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/24 13:12:50 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/07/31 11:40:53 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static int	process_flag(char *str, t_input *input)
 int	parse_flags(int argc, char **argv, t_input *input)
 {
 	int	i;
-	
+
 	i = 1;
 	while (i < argc)
 	{

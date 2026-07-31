@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 16:20:30 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/30 14:47:02 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/31 11:29:44 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	chunk_sort(t_algorithm *alg);
 int		find_index_position(int index, t_stack *stack);
 void	rank_index(t_stack *stack);
 void	rotate_to_top(int target, t_algorithm *alg,
-		void (*r)(t_stack *, t_stats *),
-		void (*rr)(t_stack *, t_stats *));
+			void (*r)(t_stack *, t_stats *),
+			void (*rr)(t_stack *, t_stats *));
 
 #endif

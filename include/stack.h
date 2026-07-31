@@ -6,7 +6,7 @@
 /*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:31:27 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/26 17:03:33 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/31 11:24:00 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	stack_init(t_stack *stack);
 void	stack_clear(t_stack *stack);
 
 // Node lifecycle;
-t_node 	*node_new(int value);
+t_node	*node_new(int value);
 
 // Stack primitive operations;
 void	stack_push_top(t_stack *stack, t_node *node);
@@ -45,6 +45,6 @@ t_node	*stack_pop_top(t_stack *stack);
 t_node	*stack_pop_bottom(t_stack *stack);
 
 // Bridge from parser to stack
-int	stack_fill_from_array(t_stack *stack, int *numbers, int size);
+int		stack_fill_from_array(t_stack *stack, int *numbers, int size);
 
 #endif

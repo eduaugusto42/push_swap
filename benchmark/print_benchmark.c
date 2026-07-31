@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_banchmark.c                                  :+:      :+:    :+:   */
+/*   print_benchmark.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 20:00:46 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/26 22:19:46 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/31 11:56:38 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,20 @@ static const char *g_operation_name[] =
 	[RRR] = "rrr"
 };
 
-void	print_banch(t_input *input, t_stats *stats)
+void	print_bench(t_input *input, t_stats *stats)
 {
-	int percent;
-	int decimal;
-	int i;
-	
+	int	percent;
+	int	decimal;
+	int	i;
+
 	percent = (int)(input->disorder * 100);
 	decimal = (int)(input->disorder * 10000) % 100;
-	
 	ft_printf("[BENCH] disorder:  %d.", percent);
 	if (decimal < 10)
 		ft_printf("0");
 	ft_printf("%d%%\n", decimal);
-	ft_printf("[BENCH] strategy:  %s / %s \n", strategy_name(input), strategy_complexity(input));
+	ft_printf("[BENCH] strategy:  %s / %s \n",
+		strategy_name(input), strategy_complexity(input));
 	ft_printf("[BENCH] total_ops:  %d\n", stats->total);
 	ft_printf("[BENCH] ");
 	i = 0;

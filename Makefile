@@ -6,7 +6,7 @@
 #    By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/18 17:24:11 by eduaaugu          #+#    #+#              #
-#    Updated: 2026/07/26 22:27:47 by juliopestan      ###   ########.fr        #
+#    Updated: 2026/07/31 10:52:59 by eduaaugu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,20 +21,23 @@ LIBFT = $(LIBFT_DIR)/libft.a
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 
 SRC = main.c \
-	  parser/parse_command_line.c \
-	  parser/validation.c \
-	  parser/input_utils.c \
-	  parser/parser_flags.c \
-	  stack/stack_lifecycle.c \
-	  stack/stack_pop.c \
-	  stack/stack_push.c \
+	  algorithm/simple.c \
+	  algorithm/medium.c \
+	  algorithm/complex.c \
+	  algorithm/algorithm_utils.c \
+	  benchmark/init_stats.c \
+	  benchmark/print_benchmark.c \
 	  operations/push.c \
 	  operations/reverse_rotate.c \
 	  operations/rotate.c \
 	  operations/swap.c \
-	  benchmark/init_stats.c \
-	  benchmark/print_banchmark.c \
-	  algorithm/simple.c 
+	  parser/input_utils.c \
+	  parser/parse_command_line.c \
+	  parser/parser_flags.c \
+	  parser/validation.c \
+	  stack/stack_lifecycle.c \
+	  stack/stack_pop.c \
+	  stack/stack_push.c \
 
 OBJS = $(SRC:.c=.o)
 

@@ -6,26 +6,24 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 18:59:38 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/29 19:23:40 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/31 11:21:55 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "input.h"
 #include "stack.h"
 #include "algorithm.h"
 #include "benchmark.h"
-#include <stdio.h>
 
 t_algorithm	*init_algorithm(t_stack *a, t_stack *b, t_stats *stats);
 
 int	main(int argc, char **argv)
 {
-	t_input	*input;
-	t_stats	*stats;
-	t_algorithm *alg;
-	t_stack	*a;
-	t_stack	*b;
+	t_input		*input;
+	t_stats		*stats;
+	t_algorithm	*alg;
+	t_stack		*a;
+	t_stack		*b;
 
 	if (argc == 1)
 		return (0);
@@ -36,7 +34,7 @@ int	main(int argc, char **argv)
 	input = parse_command_line(argc, argv);
 	if (!input)
 	{
-		printf("Error\n");
+		ft_printf("Error\n");
 		return (1);
 	}
 	stack_fill_from_array(a, input->numbers, input->size);
@@ -45,14 +43,14 @@ int	main(int argc, char **argv)
 	if (input->disorder == 0)
 		return (0);
 	if (input->disorder <= 0.2)
-		sort_simple(alg);
-	print_banch(input, stats);
+		selection_sort(alg);
+	print_bench(input, stats);
 	return (0);
 }
 
 t_algorithm	*init_algorithm(t_stack *a, t_stack *b, t_stats *stats)
 {
-	t_algorithm *alg;
+	t_algorithm	*alg;
 
 	alg = malloc(sizeof(t_algorithm));
 	if (!alg)

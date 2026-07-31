@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 16:47:27 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/30 12:48:24 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/31 11:46:22 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ void	chunk_sort(t_algorithm *alg)
 	rank_index(alg->a);
 	while (alg->a->top)
 	{
-		while(chunk_exists(alg->a, chunk, chunk_size))
+		while (chunk_exists(alg->a, chunk, chunk_size))
 		{
 			target = find_best_chunk_target(alg->a, chunk, chunk_size);
-			rotate_to_top(target, alg, ra, rra); 
+			rotate_to_top(target, alg, ra, rra);
 			pb(alg->b, alg->a, alg->stats);
 		}
 		chunk++;
 	}
 	target = alg->b->size - 1;
-	while(alg->b->top)
+	while (alg->b->top)
 	{
 		rotate_to_top(target, alg, rb, rrb);
 		pa(alg->a, alg->b, alg->stats);
@@ -68,10 +68,10 @@ int	chunk_exists(t_stack *stack, int chunk, int chunk_size)
 	t_node		*current;
 
 	current = stack->top;
-	while(current)
+	while (current)
 	{
-		if (chunk * chunk_size <= current->index 
-				&& current->index < (chunk + 1) * chunk_size)
+		if (chunk * chunk_size <= current->index
+			&& current->index < (chunk + 1) * chunk_size)
 			return (1);
 		current = current->next;
 	}

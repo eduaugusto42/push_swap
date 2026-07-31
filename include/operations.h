@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 23:07:49 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/29 19:08:50 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/31 11:25:33 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,4 @@ void	rra(t_stack *a, t_stats *stats);
 void	rrb(t_stack *b, t_stats *stats);
 void	rrr(t_stack *a, t_stack *b, t_stats *stats);
 
-# endif
+#endif
