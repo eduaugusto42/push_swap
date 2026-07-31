@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 18:59:38 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/31 17:30:22 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/31 17:39:31 by jcesar-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,23 +50,23 @@ int	main(int argc, char **argv)
 
 t_algorithm *algorithm_init(void)
 {
-    t_algorithm *alg;
+	t_algorithm *alg;
 
-    alg = malloc(sizeof(t_algorithm));
-    if (!alg)
-        return (NULL);
-    alg->a = malloc(sizeof(t_stack));
-    if (!alg->a)
-        return (free_algorithm(alg));
-    alg->b = malloc(sizeof(t_stack));
-    if (!alg->b)
-        return (free_algorithm(alg));
-    alg->stats = init_stats();
-    if (!alg->stats)
-        return (free_algorithm(alg));
-    stack_init(alg->a);
-    stack_init(alg->b);
-    return (alg);
+	alg = malloc(sizeof(t_algorithm));
+	if (!alg)
+		return (NULL);
+	alg->a = malloc(sizeof(t_stack));
+	if (!alg->a)
+		return (free_algorithm(alg));
+	alg->b = malloc(sizeof(t_stack));
+	if (!alg->b)
+		return (free_algorithm(alg));
+	alg->stats = init_stats();
+	if (!alg->stats)
+		return (free_algorithm(alg));
+	stack_init(alg->a);
+	stack_init(alg->b);
+	return (alg);
 }
 
 t_algorithm	*free_algorithm(t_algorithm *alg)
