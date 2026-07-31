@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 23:07:49 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/31 11:25:33 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/31 17:22:16 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include "input.h"
 # include "benchmark.h"
 
-// Operations functions;
 void	pa(t_stack *a, t_stack *b, t_stats *stats);
 void	pb(t_stack *b, t_stack *a, t_stats *stats);
 void	sa(t_stack *a, t_stats *stats);

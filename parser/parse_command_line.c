@@ -6,7 +6,7 @@
 /*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 10:50:50 by juliopestan       #+#    #+#             */
-/*   Updated: 2026/07/26 15:55:58 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/31 17:20:28 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,6 @@ static t_input	*init_input(int argc, char **argv)
 	input->benchmark = 0;
 	input->numbers = NULL;
 	input->size = count_numbers(argc, argv);
-	input->fd = 1;
 	if (input->size == 0)
 		return (free_input(input));
 	input->numbers = malloc(sizeof(int) * input->size);

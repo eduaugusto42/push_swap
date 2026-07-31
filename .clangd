@@ -1,5 +1,5 @@
 CompileFlags:
   Add:
-    - -I../include
-    - -I../libft
-    - -I../ft_printf
+    - -Iinclude
+    - -Ilibft
+    - -Ift_printf

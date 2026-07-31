@@ -6,7 +6,7 @@
 /*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 15:31:27 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/31 11:24:00 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/31 17:21:46 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,16 @@ typedef struct s_stack
 	int		size;
 }	t_stack;
 
-// Stack lifecycle;
 void	stack_init(t_stack *stack);
 void	stack_clear(t_stack *stack);
 
-// Node lifecycle;
 t_node	*node_new(int value);
 
-// Stack primitive operations;
 void	stack_push_top(t_stack *stack, t_node *node);
 void	stack_push_bottom(t_stack *stack, t_node *node);
 t_node	*stack_pop_top(t_stack *stack);
 t_node	*stack_pop_bottom(t_stack *stack);
 
-// Bridge from parser to stack
 int		stack_fill_from_array(t_stack *stack, int *numbers, int size);
 
 #endif

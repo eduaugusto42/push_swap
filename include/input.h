@@ -6,7 +6,7 @@
 /*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 14:33:50 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/26 16:02:00 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/07/31 17:14:21 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ typedef struct s_input
 	int			*numbers;
 	int			size;
 	double		disorder;
-	int			fd;
 }	t_input;
 
 t_input	*parse_command_line(int argc, char **argv);

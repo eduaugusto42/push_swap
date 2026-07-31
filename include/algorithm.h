@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 16:20:30 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/31 11:29:44 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/07/31 17:23:08 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,11 @@ typedef struct s_algorithm
 	t_input	*input;
 }	t_algorithm;
 
-//double	compute_disorder(int *numbers, int size);
 
-void	selection_sort(t_algorithm *alg);
+void	simple_sort(t_algorithm *alg);
 void	chunk_sort(t_algorithm *alg);
-//void	sort_complex(t_algorithm *alg);
-//void	sort_adaptive(t_algorithm *alg);
+void	radix_sort(t_algorithm *alg);
+void	sort_adaptive(t_algorithm *alg);
 
 int		find_index_position(int index, t_stack *stack);
 void	rank_index(t_stack *stack);
