@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 18:59:38 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/31 17:39:31 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/08/01 15:56:51 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "benchmark.h"
 
 int			cleanup(t_algorithm *alg, t_input *input);
-t_algorithm *algorithm_init(void);
+t_algorithm	*algorithm_init(void);
 t_algorithm	*free_algorithm(t_algorithm *alg);
 void		choose_algorithm(t_algorithm *alg, t_input *input);
 
@@ -41,16 +41,16 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	if (stack_fill_from_array(alg->a, input->numbers, input->size) == 0
-			|| input->disorder == 0)
+		|| input->disorder == 0)
 		return (cleanup(alg, input));
 	choose_algorithm(alg, input);
 	print_bench(input, alg->stats);
 	return (cleanup(alg, input));
 }
 
-t_algorithm *algorithm_init(void)
+t_algorithm	*algorithm_init(void)
 {
-	t_algorithm *alg;
+	t_algorithm	*alg;
 
 	alg = malloc(sizeof(t_algorithm));
 	if (!alg)
