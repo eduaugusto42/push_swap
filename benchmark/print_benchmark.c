@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_benchmark.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 20:00:46 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/07/31 17:57:44 by jcesar-o         ###   ########.fr       */
+/*   Updated: 2026/08/01 18:53:51 by juliopestan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ const char	*strategy_name(t_input *input)
 
 const char	*strategy_complexity(t_input *input)
 {
-	if (input->disorder <= 0.2 && input->strategy == SIMPLE)
+	if (input->disorder <= 0.2 || input->strategy == SIMPLE)
 		return ("O(n²)");
-	if (input->disorder <= 0.5 && input->strategy == MEDIUM)
+	if (input->disorder <= 0.5 || input->strategy == MEDIUM)
 		return ("O(n√n)");
-	if (input->disorder <= 1 && input->strategy == COMPLEX)
+	if (input->disorder <= 1 || input->strategy == COMPLEX)
 		return ("O(n log n)");
 	if (input->strategy == ADAPTIVE)
 	{
