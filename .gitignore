@@ -6,16 +6,10 @@
 
 # Executables
 push_swap
-checker
-a.out
+checker_linux
+
+# LSP Files
+.clangd
 
 # Debug / test files
-*.log
-*.tmp
-vgcore.*
-valgrind-out.txt
-
-# OS / editor
-.DS_Store
-*.swp
-*.swo
+bench.txt
