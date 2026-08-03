@@ -1,4 +1,4 @@
-*Este projeto foi criado como parte do currículo da 42 por eduaaugu, jcesar-o*
+*This project has been created as part of the 42 curriculum by eduaaugu, jcesar-o.*
 
 # Description
 
@@ -88,3 +88,20 @@ To remove all compiled files and rebuild the project from scratch:
 make fclean
 make
 ```
+# Resources
+
+The following resources were consulted during the development of this project:
+
+- **42 push_swap Subject:** used as the main specification for the project requirements and evaluation criteria.
+- **42 Norm:** followed to ensure compliance with the coding standard.
+- **Linux Manual Pages (`man`):** consulted for C library functions and system calls.
+- **Stack Data Structure Documentation:** used as a reference for the implementation of the stack data structure and its operations.
+
+All source code was written specifically for this project. The resources above were used solely for study and reference purposes.
+
+## jcesar-o
+
+- Implemented the command-line parser and input validation.
+- Developed the strategy selection and benchmark flags.
+- Implemented the benchmark output.
+- Contributed to the project documentation.
