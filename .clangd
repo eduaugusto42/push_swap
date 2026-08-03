@@ -1,5 +1,0 @@
-CompileFlags:
-  Add:
-    - -Iinclude
-    - -Ilibft
-    - -Ift_printf

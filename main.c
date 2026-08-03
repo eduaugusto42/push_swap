@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 18:59:38 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/08/01 15:56:51 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/08/01 16:38:05 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ t_algorithm	*free_algorithm(t_algorithm *alg)
 {
 	if (!alg)
 		return (NULL);
+	stack_clear(alg->a);
+	stack_clear(alg->b);
 	free(alg->a);
 	free(alg->b);
 	free(alg->stats);
@@ -90,6 +92,7 @@ int	cleanup(t_algorithm *alg, t_input *input)
 void	choose_algorithm(t_algorithm *alg, t_input *input)
 {
 	if ((input->disorder <= 0.2 && input->strategy == ADAPTIVE)
+		|| (alg->a->size <= 5 && input->strategy == ADAPTIVE)
 		|| input->strategy == SIMPLE)
 		simple_sort(alg);
 	else if ((input->disorder <= 0.5 && input->strategy == ADAPTIVE)
