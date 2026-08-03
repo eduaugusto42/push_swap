@@ -6,7 +6,7 @@
 /*   By: jcesar-o <jcesar-o@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 18:59:38 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/08/03 15:59:56 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/08/03 18:57:17 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ int	main(int argc, char **argv)
 		ft_printf("Error\n");
 		return (1);
 	}
-	if (stack_fill_from_array(alg->a, input->numbers, input->size) == 0
-		|| input->disorder == 0)
+	if (stack_fill_from_array(alg->a, input->numbers, input->size) == 0)
 		return (cleanup(alg, input));
 	choose_algorithm(alg, input);
 	print_bench(input, alg->stats);
@@ -91,13 +90,17 @@ int	cleanup(t_algorithm *alg, t_input *input)
 
 void	choose_algorithm(t_algorithm *alg, t_input *input)
 {
-	if ((input->disorder <= 0.2 && input->strategy == ADAPTIVE)
-		|| (alg->a->size <= 5 && input->strategy == ADAPTIVE)
-		|| input->strategy == SIMPLE)
-		simple_sort(alg);
-	else if ((input->disorder <= 0.5 && input->strategy == ADAPTIVE)
-		|| input->strategy == MEDIUM)
-		chunk_sort(alg);
-	else
-		radix_sort(alg);
+	if (input->disorder == 0)
+		return ;
+	if (input->strategy == SIMPLE)
+		return (simple_sort(alg));
+	if (input->strategy == MEDIUM)
+		return (chunk_sort(alg));
+	if (input->strategy == COMPLEX)
+		return (radix_sort(alg));
+	if (alg->a->size <= 5 || input->disorder < 0.2)
+		return (simple_sort(alg));
+	if (input->disorder < 0.5)
+		return (chunk_sort(alg));
+	radix_sort(alg);
 }
