@@ -6,7 +6,7 @@
 /*   By: juliopestana <juliopestana@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 20:00:46 by jcesar-o          #+#    #+#             */
-/*   Updated: 2026/08/01 18:53:51 by juliopestan      ###   ########.fr       */
+/*   Updated: 2026/08/03 17:05:21 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ const char	*strategy_name(t_input *input)
 
 const char	*strategy_complexity(t_input *input)
 {
-	if (input->disorder <= 0.2 || input->strategy == SIMPLE)
+	if (input->strategy == SIMPLE)
 		return ("O(n²)");
-	if (input->disorder <= 0.5 || input->strategy == MEDIUM)
+	if (input->strategy == MEDIUM)
 		return ("O(n√n)");
-	if (input->disorder <= 1 || input->strategy == COMPLEX)
+	if (input->strategy == COMPLEX)
 		return ("O(n log n)");
 	if (input->strategy == ADAPTIVE)
 	{
-		if (input->disorder <= 0.2)
+		if (input->disorder <= 0.2 || input->size <= 5)
 			return ("O(n²)");
 		else if (input->disorder <= 0.5)
 			return ("O(n√n)");

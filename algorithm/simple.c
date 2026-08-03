@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 17:44:22 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/31 14:08:30 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/08/03 15:20:29 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	selection_sort(t_algorithm *alg)
 
 	i = 0;
 	rank_index(alg->a);
-	while (alg->a->top)
+	while (alg->a->size > 1)
 	{
 		rotate_to_top(i, alg, ra, rra);
 		pb(alg->b, alg->a, alg->stats);

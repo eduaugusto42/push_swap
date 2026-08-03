@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 16:47:27 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/31 11:46:22 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/08/03 14:58:44 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,12 @@ void	chunk_sort(t_algorithm *alg)
 
 int	ft_sqrt(int nb)
 {
-	long int	i;
+	int	i;
 
-	if (nb <= 0)
-		return (0);
-	else if (nb == 1)
-		return (1);
 	i = 1;
-	while (i < nb)
-	{
-		if (i * i >= nb)
-			return (i);
+	while (i * i < nb)
 		i++;
-	}
-	return (0);
+	return (i);
 }
 
 int	chunk_exists(t_stack *stack, int chunk, int chunk_size)

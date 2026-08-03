@@ -6,7 +6,7 @@
 /*   By: eduaaugu <eduaaugu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/17 15:58:19 by eduaaugu          #+#    #+#             */
-/*   Updated: 2026/07/30 17:39:47 by eduaaugu         ###   ########.fr       */
+/*   Updated: 2026/08/03 14:16:00 by eduaaugu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	pb(t_stack *b, t_stack *a, t_stats *stats)
 	if (stack_push(b, a) == 1)
 	{
 		stats->op_count[PB]++;
+		stats->total++;
 		ft_putstr_fd("pb\n", 1);
 	}
 }
